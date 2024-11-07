@@ -1,0 +1,34 @@
+name: Staging Build
+
+on:
+  push:
+    branches: [ staging ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+           
+    - name: Deploying to Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        script: |
+          cd /www/wwwroot/gatest.chandimal.site/public_html/wp-content/themes/gatest
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          nvm use 14
+          node -v
+          git checkout staging
+          git branch
+          git stash
+          git pull
+          yarn
+          npx browserslist@latest --update-db
+          yarn build
+          rm -r node_modules
+          rm -rf /www/wwwroot/gatest.chandimal.site/public_html/wp-content/uploads/cache
+          echo "GA Test 2.0 Staging deployment completed"
