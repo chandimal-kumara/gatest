@@ -19,6 +19,8 @@ jobs:
         script: |
           cd /www/wwwroot/gatest.chandimal.space/public_html/wp-content/themes/gatest
           nvm use 14
+          export NVM_DIR=/www/server/nvm
+          source /www/server/nvm/nvm.sh
           node -v
           git checkout staging
           git branch
