@@ -1,0 +1,81 @@
+.logo-section {
+  overflow: hidden;
+
+  .section-inner-wrp {
+    .intro-content {
+      max-width: 720px;
+      margin: 0 auto 30px auto;
+
+      @include media-breakpoint-up(xxl) {
+        max-width: 812px;
+        margin: 0 auto 50px auto;
+      }
+    }
+
+    .logo-wrp {
+      .logo-item {
+        width: 146px;
+        margin: 0 8px;
+        padding: 5px 20px;
+
+        @include media-breakpoint-up(sm) {
+          width: 166px;
+          padding: 9px 20px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          width: 260px;
+          padding: 14px 32px;
+        }
+
+        img {
+          object-fit: contain;
+          height: 70px;
+
+          @include media-breakpoint-up(xl) {
+            height: 48px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            height: 73px;
+          }
+        }
+      }
+
+      &.logo-grid {
+        outline: 0;
+        margin: 0;
+
+        @include media-breakpoint-up(md) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin: -8px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          flex-wrap: nowrap;
+        }
+
+        &::after {
+          content: "flickity";
+          display: none;
+
+          @include media-breakpoint-up(md) {
+            content: "";
+          }
+        }
+
+        .logo-item {
+          @include media-breakpoint-up(md) {
+            margin: 8px;
+          }
+        }
+      }
+
+      &.logo-slider {
+        outline: 0;
+      }
+    }
+  }
+}

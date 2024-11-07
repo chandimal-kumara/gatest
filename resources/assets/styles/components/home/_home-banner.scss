@@ -1,0 +1,91 @@
+/* stylelint-disable */
+.home-banner-section {
+  height: calc(100vh - 90px);
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .header-variation & {
+    z-index: 5;
+
+    .header,
+    .sticky-overlay {
+      position: absolute;
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    height: calc(100vh - 100px);
+  }
+
+  .slogan-wrp {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+
+    @include media-breakpoint-up(xl) {
+      align-items: center;
+    }
+
+    .title-wrp {
+      max-width: 939px;
+
+      h1 {
+        color: $white;
+      }
+
+      .description {
+        color: $white;
+        margin-bottom: 60px;
+      }
+
+      .buttons-wrp {
+        .btn:first-child {
+          margin-bottom: 10px;
+
+          @include media-breakpoint-up(sm) {
+            margin-bottom: 0;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .banner-video-wrp {
+    pointer-events: none;
+    overflow: hidden;
+
+    @include absolute-item(100%, 100%, top-left, 0, 0, 2);
+
+    .vimeo-wrapper {
+      height: 100%;
+
+      iframe {
+        min-height: 100vh;
+        min-width: 177.77vh;
+
+        @include absolute-item(100vw, 56.25vw, center);
+      }
+
+      video {
+        min-height: 100vh;
+        min-width: 177.77vh;
+
+        @include absolute-item(100vw, 56.25vw, center);
+      }
+    }
+  }
+
+  // header variation related
+  header,
+  .sticky-overlay,
+  .mobile-menu {
+    display: none;
+  }
+}

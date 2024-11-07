@@ -1,0 +1,131 @@
+@import "./form/text";
+@import "./form/textarea";
+@import "./form/dropdown";
+@import "./form/checkbox";
+@import "./form/radio";
+
+form {
+  position: relative;
+
+  .form-row {
+    .form-item {
+      margin-bottom: 15px;
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        color: $label-color;
+        margin-bottom: 5px;
+
+        @include font(16px, 28px, $fontBold);
+
+        @include media-breakpoint-up(xl) {
+          @include font(18px, 30px, $fontBold);
+        }
+      }
+
+      .wpcf7-form-control-wrap {
+        position: static;
+
+        input,
+        textarea {
+          outline: none;
+          appearance: none;
+          box-shadow: none;
+          width: 100%;
+          margin: 0;
+
+          @include font(16px, 28px, $fontSemiBold);
+          @include custom-transition(default, color, background-color);
+
+          &::placeholder {
+            color: $placeholder-color;
+
+            @include custom-transition(default, all);
+          }
+
+          &:focus,
+          &:focus-visible {
+            outline: none;
+
+            &::placeholder {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button-wrp-outter {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+      margin-top: 35px;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    color: $error-msg-bg;
+
+    @include font(12px, 28px);
+    @include absolute-item(auto, auto, top-right, 0, 5px);
+  }
+
+  .wpcf7-spinner {
+    display: none;
+  }
+
+  .wpcf7-response-output {
+    @extend .l-para;
+
+    text-align: center;
+    padding: 10px 35px !important;
+    border: none !important;
+    margin: 25px 0 0 0 !important;
+    display: none;
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 0 0 30px !important;
+    }
+  }
+
+  /* stylelint-disable */
+  &.invalid,
+  &.failed,
+  &.aborted,
+  &.spam,
+  &.unaccepted,
+  &.payment-required {
+    .wpcf7-response-output {
+      background-color: $error-msg-bg;
+      color: $error-msg-color;
+    }
+
+    .button-wrapper-form {
+      + .wpcf7-response-output {
+        display: block;
+      }
+    }
+  }
+
+  &.sent {
+    .wpcf7-response-output {
+      background-color: $success-msg-bg;
+      color: $success-msg-color;
+    }
+
+    .button-wrapper-form {
+      + .wpcf7-response-output {
+        display: block;
+      }
+    }
+  }
+  /* stylelint-enable */
+}

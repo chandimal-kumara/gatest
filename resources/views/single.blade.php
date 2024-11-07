@@ -1,0 +1,35 @@
+@extends('layouts.app')
+
+@section('content')
+  @if (have_rows('page_content'))
+    @while (have_rows('page_content')) @php the_row() @endphp
+      @if(get_row_layout() == 'one_column_section')
+        @include('partials.fcp.one-column-section')
+      @elseif(get_row_layout() == 'two_column')
+        @include('partials.fcp.two-column-section')
+      @elseif(get_row_layout() == 'three_column')
+        @include('partials.fcp.three-column-section')
+      @elseif(get_row_layout() == 'cards_section')
+        @include('partials.fcp.cards-section')
+      @elseif(get_row_layout() == 'form_section')
+        @include('partials.fcp.form-section')
+      @elseif(get_row_layout() == 'video_section')
+        @include('partials.fcp.video-section')
+      @elseif(get_row_layout() == 'image_gallery')
+        @include('partials.fcp.gallery-section')
+      @elseif(get_row_layout() == 'accordion_section')
+        @include('partials.fcp.accordion-section')
+      @elseif(get_row_layout() == 'cta_section')
+        @include('partials.fcp.cta-section')
+      @elseif(get_row_layout() == 'news_section')
+        @include('partials.fcp.news-section')
+      @elseif(get_row_layout() == 'image_section')
+        @include('partials.fcp.image-section')
+      @elseif(get_row_layout() == 'logo_slider')
+        @include('partials.fcp.logo-slider-section')
+      @elseif(get_row_layout() == 'testimonials')
+        @include('partials.fcp.testimonials-section')
+      @endif
+    @endwhile
+  @endif
+@endsection

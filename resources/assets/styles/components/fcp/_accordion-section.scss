@@ -1,0 +1,116 @@
+.accordion-section {
+  .section-inner-wrp {
+    max-width: 902px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(xxl) {
+      max-width: 1364px;
+    }
+
+    .intro-content {
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+
+      @include media-breakpoint-up(xl) {
+        margin: 0 auto 50px auto;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        max-width: 812px;
+        margin: 0 auto 80px auto;
+      }
+    }
+
+    .accordion-wrp {
+      .accordion-item-wrp {
+        border-bottom: 1px dashed $gray-300;
+
+        &:first-child {
+          border-top: 1px dashed $gray-300;
+        }
+
+        .faq-title {
+          position: relative;
+          padding: 15px 25px 15px 0;
+          cursor: pointer;
+
+          @include media-breakpoint-up(md) {
+            padding: 15px 95px 20px 15px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            padding: 25px 100px 25px 25px;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+
+          .accord-icon {
+            @include absolute-item(14px, 14px, top-right, 22px, 0);
+
+            @include media-breakpoint-up(md) {
+              @include absolute-item(14px, 14px, top-right, 22px, 0);
+            }
+
+            @include media-breakpoint-up(xxl) {
+              @include absolute-item(18px, 18px, top-right, 30px, 25px);
+            }
+
+            &::after {
+              content: "";
+              display: block;
+              background-color: $primary;
+              transform: translateY(-50%) rotate(0);
+
+              @include absolute-item(100%, 2px, top-left, 50%, 0);
+              @include custom-transition(0.35s, all);
+            }
+
+            &::before {
+              content: "";
+              display: block;
+              background-color: $primary;
+              transform: translateY(-50%) rotate(-90deg);
+              opacity: 0;
+
+              @include absolute-item(100%, 2px, top-left, 50%, 0);
+              @include custom-transition(0.35s, all);
+            }
+          }
+
+          &.collapsed {
+            .accord-icon {
+              &::after {
+                transform: translateY(-50%) rotate(90deg);
+              }
+
+              &::before {
+                transform: translateY(-50%);
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .faq-content {
+          .faq-content-inner-wrp {
+            padding: 0 25px 15px 0;
+
+            @include media-breakpoint-up(md) {
+              padding: 0 95px 20px 15px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              padding: 0 100px 25px 25px;
+            }
+
+            > * {
+              color: $gray-500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

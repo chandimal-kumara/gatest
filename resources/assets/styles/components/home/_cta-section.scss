@@ -1,0 +1,55 @@
+.home-cta-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $section-gap;
+  position: relative;
+
+  @include media-breakpoint-up(xl) {
+    margin: $section-gap-xl;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin: $section-gap-xxl;
+  }
+
+  &::after {
+    content: "";
+    background-color: $black;
+    opacity: 0.2;
+
+    @include absolute-item(100%, 100%, top-left, 0, 0, 0);
+  }
+
+  .section-inner-wrp {
+    position: relative;
+    z-index: 1;
+
+    .content-wrp {
+      max-width: 1226px;
+      margin: 0 auto;
+      padding: 50px 0;
+
+      @include media-breakpoint-up(xxl) {
+        padding: 160px 0;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding: 240px 0;
+      }
+
+      p {
+        color: $white;
+        margin-bottom: 0;
+      }
+
+      a {
+        margin-top: 40px;
+
+        @include media-breakpoint-up(xxl) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

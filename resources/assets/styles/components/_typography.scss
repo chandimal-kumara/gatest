@@ -1,0 +1,208 @@
+body {
+  color: $black;
+
+  @include font(16px, 28px, $fontSemiBold);
+}
+
+h1 {
+  @include font(32px, 36px, $fontBlack);
+
+  @include media-breakpoint-up(xl) {
+    @include font(48px, 52px, $fontBlack);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include font(80px, 84px, $fontBlack);
+  }
+}
+
+h2 {
+  margin-bottom: 30px;
+
+  @include font(28px, 32px, $fontBlack);
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 16px;
+
+    @include font(32px, 36px, $fontBlack);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: 0;
+
+    @include font(42px, 52px, $fontBlack);
+  }
+}
+
+h3 {
+  margin-bottom: 30px;
+
+  @include font(24px, 32px, $fontBlack);
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 28px;
+
+    @include font(24px, 36px, $fontBlack);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: 40px;
+
+    @include font(32px, 42px, $fontBlack);
+  }
+}
+
+h4 {
+  margin-bottom: 40px;
+
+  @include font(16px, 20px, $fontBlack);
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 20px;
+
+    @include font(20px, 28px, $fontBlack);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include font(24px, 30px, $fontBlack);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-family-navigo;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+p {
+  margin-bottom: 15px;
+
+  strong,
+  b {
+    font-weight: $fontBold;
+  }
+
+  &:last-child,
+  &:only-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.eyebrow-heading {
+  color: $primary;
+  padding-top: 18px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+
+  @include font(16px, 28px, $fontBold, 0);
+
+  @include media-breakpoint-up(xxl) {
+    @include font(18px, 30px, $fontBold);
+  }
+
+  &::after {
+    content: "";
+    background-image: url($eyebrow-icon);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include absolute-item(18px, 18px, top-left, 0, -18px);
+  }
+}
+
+.xxl-para {
+  font-family: $font-family-navigo;
+  margin-bottom: 30px;
+
+  @include font(36px, 48px, $fontBlack);
+
+  @include media-breakpoint-up(xl) {
+    @include font(48px, 58px, $fontBlack);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: 50px;
+
+    @include font(68px, 74px, $fontBlack);
+  }
+}
+
+.xl-para {
+  @include font(18px, 28px, $fontSemiBold);
+
+  @include media-breakpoint-up(xl) {
+    @include font(20px, 32px, $fontSemiBold);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include font(24px, 38px, $fontSemiBold);
+  }
+}
+
+.l-para {
+  @include font(16px, 28px, $fontBold);
+
+  @include media-breakpoint-up(xxl) {
+    @include font(18px, 30px, $fontBold);
+  }
+}
+
+.s-para {
+  @include font(12px, 20px, $fontSemiBold);
+
+  @include media-breakpoint-up(xxl) {
+    @include font(14px, 24px, $fontSemiBold);
+  }
+}
+
+ol {
+  padding-left: 0;
+  text-align: left;
+  list-style: none;
+  counter-reset: ol-counter;
+
+  li {
+    position: relative;
+    counter-increment: ol-counter;
+    padding-left: 22px;
+
+    &::marker {
+      font-weight: $fontSemiBold;
+    }
+
+    &::before {
+      content: counter(ol-counter) ".";
+
+      @include absolute-item(auto, auto, top-left, 0, 0);
+    }
+  }
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+
+  li:not(.menu-item, .select2-results__option, .gallery-item, .viewer-toolbar > ul > li, .viewer-list > li) {
+    list-style: none;
+    position: relative;
+    padding-left: 22px;
+
+    &::after {
+      content: "";
+      border-style: solid;
+      border-width: 6px 0 6px 8px;
+      border-color: transparent transparent transparent $secondary;
+
+      @include absolute-item(auto, auto, top-left, 8px, 0);
+    }
+
+    &::marker {
+      display: none;
+    }
+  }
+}

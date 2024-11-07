@@ -1,0 +1,40 @@
+.cta-section {
+  background-color: $primary;
+
+  .section-inner-wrp {
+    padding: $section-gap;
+
+    @include media-breakpoint-up(xl) {
+      padding: $section-gap-xl;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      padding: $section-gap-xxl;
+    }
+
+    .content-wrp {
+      max-width: 1135px;
+
+      .eyebrow-heading {
+        color: $white;
+      }
+
+      h2 {
+        color: $white;
+        margin-bottom: 0;
+      }
+
+      .button-wrp {
+        margin-top: 30px;
+
+        @include media-breakpoint-up(xl) {
+          margin-top: 40px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

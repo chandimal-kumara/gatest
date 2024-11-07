@@ -1,0 +1,107 @@
+.home-case-studies-section {
+  overflow: hidden;
+
+  .section-inner-wrp {
+    max-width: 904px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(xxl) {
+      max-width: 1364px;
+    }
+
+    .intro-content {
+      max-width: 720px;
+      margin: 0 auto 30px auto;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 auto 70px auto;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        max-width: 812px;
+        margin: 0 auto 100px auto;
+      }
+    }
+
+    .case-studies-wrp {
+      .case-studies-item {
+        margin: 0 8px;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+          max-width: 353px;
+          margin: 0 0 70px 0;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          max-width: 536px;
+          margin: 0 0 100px 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .image-wrp {
+          margin-bottom: 30px;
+
+          @include media-breakpoint-up(xxl) {
+            margin-bottom: 50px;
+          }
+
+          img {
+            object-fit: cover;
+            height: 430px;
+
+            @include media-breakpoint-up(md) {
+              height: 504px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              height: 770px;
+            }
+          }
+        }
+
+        .content-wrp {
+          a {
+            margin-top: 30px;
+
+            @include media-breakpoint-up(xxl) {
+              margin-top: 50px;
+            }
+          }
+        }
+      }
+
+      .right-column {
+        @include media-breakpoint-up(md) {
+          margin-top: 100px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin-top: 150px;
+        }
+
+        .case-studies-item {
+          @include media-breakpoint-up(md) {
+            margin-left: auto;
+          }
+        }
+      }
+
+      .mobile-content {
+        outline: 0;
+
+        &::after {
+          content: "flickity";
+          display: none;
+
+          @include media-breakpoint-up(lg) {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

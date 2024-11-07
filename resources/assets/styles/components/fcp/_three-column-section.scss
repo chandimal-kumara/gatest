@@ -1,0 +1,117 @@
+.three-column-section-new {
+  .section-inner-wrp {
+    .three-column-wrp {
+      margin: 0;
+
+      .three-col-item {
+        padding: 0;
+      }
+
+      .content-wrp {
+        .image-wrapper {
+          img {
+            object-fit: cover;
+            height: 678px;
+
+            @include media-breakpoint-up(md) {
+              height: 581px;
+            }
+
+            @include media-breakpoint-up(xl) {
+              height: 100%;
+              max-height: 581px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              max-height: 613px;
+            }
+          }
+        }
+
+        .description-wrp {
+          padding: 50px 20px;
+
+          @include media-breakpoint-up(md) {
+            padding: 50px 20px 50px 40px;
+          }
+
+          @include media-breakpoint-up(lg) {
+            padding: 50px 30px 63px 50px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            padding: 70px 35px 83px 55px;
+          }
+
+          &.color-1 {
+            background-color: $bg-option-1;
+          }
+
+          &.color-2 {
+            background-color: $bg-option-2;
+          }
+
+          .button-wrp {
+            margin-top: 30px;
+
+            @include media-breakpoint-up(xl) {
+              margin-top: 40px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              margin-top: 50px;
+            }
+          }
+
+          .description-wrp-inner {
+            overflow: auto;
+
+            @include custom-scrollbar(1px, $primary, $gray-300, $border-radius: 0);
+
+            @include media-breakpoint-up(md) {
+              height: 468px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              height: 460px;
+            }
+
+            > * {
+              @include media-breakpoint-up(md) {
+                padding-right: 20px;
+              }
+            }
+
+            .button-wrapper {
+              margin-top: 30px;
+
+              @include media-breakpoint-up(xl) {
+                margin-top: 40px;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                margin-top: 50px;
+              }
+            }
+          }
+
+          &.has-one-button {
+            .description-wrp-inner {
+              @include media-breakpoint-up(md) {
+                height: 384px;
+              }
+
+              @include media-breakpoint-up(xl) {
+                height: 374px;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                height: 356px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

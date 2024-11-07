@@ -1,0 +1,412 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: $font-family-manrope;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+
+  &:not(.wp-admin) li#wp-admin-bar-google-tag {
+    display: none;
+  }
+
+  .modal-backdrop {
+    z-index: 3;
+  }
+
+  .main {
+    @include custom-transition(0.5s, transform);
+
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
+    section {
+      padding: $section-gap;
+
+      @include media-breakpoint-up(xl) {
+        padding: $section-gap-xl;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding: $section-gap-xxl;
+      }
+
+      &.stick-all {
+        + .stick-all {
+          margin-top: $multi-bg-section-gap;
+
+          @include media-breakpoint-up(xl) {
+            margin-top: $multi-bg-section-gap-xl;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            margin-top: $multi-bg-section-gap-xxl;
+          }
+
+          &.image-section.v1.no-caption.full-width-image,
+          &.three-column-section-new,
+          &.form-section {
+            padding-top: 0;
+          }
+        }
+      }
+
+      &.stick-bottom {
+        + .stick-all {
+          margin-top: $multi-bg-section-gap;
+
+          @include media-breakpoint-up(xl) {
+            margin-top: $multi-bg-section-gap-xl;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            margin-top: $multi-bg-section-gap-xxl;
+          }
+
+          &.image-section.v1.no-caption.full-width-image,
+          &.three-column-section-new,
+          &.form-section {
+            padding-top: 0;
+          }
+        }
+      }
+
+      &.bg-enabled {
+        padding: $bg-section-gap;
+        margin: $section-gap;
+
+        @include media-breakpoint-up(xl) {
+          padding: $bg-section-gap-xl;
+          margin: $section-gap-xl;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          padding: $bg-section-gap-xxl;
+          margin: $section-gap-xxl;
+        }
+
+        &.color-1 {
+          background-color: $bg-option-1;
+
+          + .color-2 {
+            padding: $bg-section-gap;
+
+            @include media-breakpoint-up(xl) {
+              padding: $bg-section-gap-xl;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              padding: $bg-section-gap-xxl;
+            }
+          }
+        }
+
+        &.color-2 {
+          background-color: $bg-option-2;
+
+          + .color-1 {
+            padding: $bg-section-gap;
+
+            @include media-breakpoint-up(xl) {
+              padding: $bg-section-gap-xl;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              padding: $bg-section-gap-xxl;
+            }
+          }
+        }
+
+        + .bg-enabled {
+          padding-top: 0;
+        }
+      }
+
+      &.page-banner-section {
+        margin-bottom: $section-gap-per-side;
+
+        @include media-breakpoint-up(xl) {
+          margin-bottom: $section-gap-per-side-xl;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin-bottom: $section-gap-per-side-xxl;
+        }
+
+        + .stick-all {
+          margin-top: $multi-bg-section-gap;
+
+          @include media-breakpoint-up(xl) {
+            margin-top: $multi-bg-section-gap-xl;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            margin-top: $multi-bg-section-gap-xxl;
+          }
+
+          &.image-section.v1.no-caption.full-width-image,
+          &.three-column-section-new,
+          &.form-section {
+            padding-top: 0;
+          }
+        }
+      }
+
+      &.video-section {
+        &.v2 {
+          &.video-left {
+            + .video-right {
+              @include media-breakpoint-up(lg) {
+                margin-top: $multi-bg-section-gap;
+                padding-top: 0;
+              }
+
+              @include media-breakpoint-up(xl) {
+                margin-top: $multi-bg-section-gap-xl;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                margin-top: $multi-bg-section-gap-xxl;
+              }
+            }
+          }
+
+          &.video-right {
+            + .video-left {
+              @include media-breakpoint-up(lg) {
+                margin-top: $multi-bg-section-gap;
+                padding-top: 0;
+              }
+
+              @include media-breakpoint-up(xl) {
+                margin-top: $multi-bg-section-gap-xl;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                margin-top: $multi-bg-section-gap-xxl;
+              }
+            }
+          }
+        }
+      }
+
+      &.contact-map-section {
+        margin-top: $multi-bg-section-gap;
+        padding-top: 0;
+
+        @include media-breakpoint-up(sm) {
+          padding-top: $section-gap-per-side;
+          margin-top: 0;
+        }
+
+        @include media-breakpoint-up(xl) {
+          padding-top: $section-gap-per-side-xl;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          padding-top: $section-gap-per-side-xxl;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .flickity-page-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0 0 0;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+
+    .dot {
+      position: static;
+      counter-increment: none;
+      width: 10px;
+      height: 10px;
+      background-color: $gray-400;
+      border-radius: 50%;
+      padding: 0;
+
+      @include custom-transition(default, background-color);
+
+      &.is-selected {
+        background-color: $gray-500;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .flickity-button {
+    background-color: $white;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 1px solid $gray-500;
+    display: none;
+    margin-top: 50px;
+
+    @include custom-transition(default, background-color);
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include absolute-item(15px, 10px);
+      @include custom-transition(default, background-image);
+    }
+
+    &.previous {
+      border-right: none;
+
+      &::after {
+        background-image: url($slider-arrow-left);
+      }
+    }
+
+    &.next {
+      &::after {
+        background-image: url($slider-arrow-right);
+      }
+    }
+
+    &:hover {
+      background-color: $primary;
+
+      &.previous {
+        &::after {
+          background-image: url($slider-arrow-left-hover);
+        }
+      }
+
+      &.next {
+        &::after {
+          background-image: url($slider-arrow-right-hover);
+        }
+      }
+    }
+  }
+
+  &.show-menu {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .main {
+      transform: translate3d(-50%, 0, 0);
+
+      @include media-breakpoint-up($menu-breakpoint) {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .editor-content-wrp {
+    h6 {
+      @extend .eyebrow-heading;
+    }
+
+    .button-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+
+      @include media-breakpoint-up(xxl) {
+        margin-top: 50px;
+      }
+
+      + * {
+        margin-top: 30px;
+
+        @include media-breakpoint-up(xxl) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  .social-media {
+    .social-media-wrp {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      @include media-breakpoint-up(xxl) {
+        gap: 15px;
+      }
+
+      .social-media-item {
+        a {
+          width: 36px;
+          height: 36px;
+          display: block;
+          border-radius: 50%;
+          background-color: $white;
+          position: relative;
+          z-index: 1;
+
+          @include custom-transition(default, background-color);
+
+          @include media-breakpoint-up(xl) {
+            width: 28px;
+            height: 28px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            width: 36px;
+            height: 36px;
+          }
+
+          &::before {
+            color: $primary;
+            font-size: 20px;
+
+            @include absolute-item();
+
+            @include media-breakpoint-up(xl) {
+              font-size: 18px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              font-size: 20px;
+            }
+          }
+
+          &:hover {
+            background-color: $secondary;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          padding: 8px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

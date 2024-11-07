@@ -1,0 +1,17 @@
+.wp-admin #adminmenu .wp-menu-image.dashicons-before > img {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.wp-admin #wpadminbar #wp-admin-bar-google-tag > div {
+  display: flex;
+  align-items: center;
+}
+
+.wp-admin #wpadminbar #wp-admin-bar-google-tag > div > img {
+  margin-right: 5px;
+  width: 28px;
+  height: 28px;
+}

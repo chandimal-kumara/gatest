@@ -1,0 +1,213 @@
+.btn {
+  padding: 5px 25px;
+  border: 1px solid $primary;
+  position: relative;
+  min-width: 100%;
+  border-radius: 0;
+  color: $white;
+  text-align: center;
+  background-color: $primary;
+
+  @include font(16px, 28px, $fontBold);
+  @include custom-transition(default, all);
+
+  @include media-breakpoint-up(sm) {
+    min-width: 150px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    min-width: 180px;
+    padding: 9px 30px;
+
+    @include font(18px, 30px, $fontBold);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $secondary !important;
+    border-color: $secondary !important;
+    color: $black !important;
+    box-shadow: none !important;
+  }
+
+  &.btn-primary {
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $secondary !important;
+      border-color: $secondary !important;
+      color: $black !important;
+    }
+
+    &.v2 {
+      background-color: $secondary;
+      border-color: $secondary;
+      color: $black;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $secondary-dark !important;
+        border-color: $secondary-dark !important;
+        color: $black !important;
+      }
+    }
+
+    // when inside background section
+    .bg-enabled & {
+      color: $black;
+      background-color: $white;
+      border-color: $white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $secondary !important;
+        border-color: $secondary !important;
+        color: $black !important;
+      }
+    }
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    color: $gray-400;
+    border-color: $gray-300;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $secondary !important;
+      border-color: $secondary !important;
+      color: $black !important;
+    }
+  }
+
+  &.btn-cta {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $black;
+
+    @include media-breakpoint-up(sm) {
+      min-width: 168px;
+      padding: 9px 30px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      min-width: 260px;
+      padding: 20px 30px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $secondary-dark !important;
+      border-color: $secondary-dark !important;
+      color: $black !important;
+    }
+  }
+
+  &.btn-menu {
+    @include media-breakpoint-up($menu-breakpoint) {
+      min-width: 150px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include media-breakpoint-up($menu-breakpoint) {
+        color: $black !important;
+        background-color: $secondary !important;
+        border-color: $secondary !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  &.btn-read-more {
+    background-color: transparent;
+    border: none;
+    color: $black;
+    padding: 0;
+    padding-right: 26px;
+    min-width: auto;
+
+    @include media-breakpoint-up(xl) {
+      padding-right: 32px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      padding-right: 45px;
+    }
+
+    &::after {
+      content: "";
+      transform: translateY(-50%);
+      background-image: url($readmore-arrow);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include absolute-item(13px, 9px, top-right, 50%, 0);
+
+      @include media-breakpoint-up(xl) {
+        @include absolute-item(17px, 12px, top-right, 50%, 0);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent !important;
+      padding-right: 34px;
+
+      @include media-breakpoint-up(xl) {
+        padding-right: 42px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding-right: 54px;
+      }
+    }
+  }
+}
+
+// form input submit styles
+.button-wrapper-form {
+  input[type="submit"] {
+    padding: 5px 25px;
+    border: 1px solid $primary;
+    position: relative;
+    min-width: 100%;
+    border-radius: 0;
+    color: $white;
+    text-align: center;
+    background-color: $primary;
+
+    @include font(16px, 28px, $fontBold);
+    @include custom-transition(default, all);
+
+    @include media-breakpoint-up(sm) {
+      min-width: 150px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      min-width: 180px;
+      padding: 9px 30px;
+
+      @include font(18px, 30px, $fontBold);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $secondary !important;
+      border-color: $secondary !important;
+      color: $black !important;
+      box-shadow: none !important;
+    }
+  }
+}

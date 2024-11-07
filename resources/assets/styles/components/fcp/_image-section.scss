@@ -1,0 +1,190 @@
+.image-section {
+  .section-inner-wrp {
+    .caption-wrp {
+      p {
+        font-weight: $fontExtraBold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &.v1 {
+    .section-inner-wrp {
+      &.option-1 {
+        .caption-outer {
+          .caption-wrp {
+            text-align: right;
+            padding-bottom: 20px;
+            margin-left: auto;
+
+            @include media-breakpoint-up(lg) {
+              max-width: 536px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              max-width: 812px;
+            }
+          }
+        }
+
+        .image-wrp {
+          img {
+            object-fit: cover;
+            height: 288px;
+
+            @include media-breakpoint-up(md) {
+              height: 450px;
+            }
+
+            @include media-breakpoint-up(lg) {
+              height: 711px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              height: 1000px;
+            }
+          }
+        }
+      }
+
+      &.option-2 {
+        width: 100%;
+        margin: 0 auto;
+
+        @include media-breakpoint-up(lg) {
+          max-width: 904px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          max-width: 1364px;
+        }
+
+        .image-wrp {
+          img {
+            object-fit: cover;
+            height: 220px;
+
+            @include media-breakpoint-up(md) {
+              height: 450px;
+            }
+
+            @include media-breakpoint-up(lg) {
+              height: 517px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              height: 780px;
+            }
+          }
+        }
+
+        .caption-outer {
+          .caption-wrp {
+            padding-top: 20px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &.v2 {
+    .section-inner-wrp {
+      .content-images {
+        @include media-breakpoint-up(md) {
+          display: flex;
+          max-width: 648px;
+          margin: 0 auto;
+          justify-content: space-between;
+        }
+
+        @include media-breakpoint-up(lg) {
+          max-width: 904px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          max-width: 1364px;
+        }
+
+        .image {
+          flex: 1 0 100%;
+
+          @include media-breakpoint-up(md) {
+            flex: 1 0 50%;
+          }
+
+          .caption-wrp {
+            padding-top: 20px;
+            text-transform: uppercase;
+
+            @include media-breakpoint-up(md) {
+              margin-bottom: 0;
+            }
+          }
+
+          .image-inner {
+            img {
+              object-fit: cover;
+              height: 361px;
+              width: 100%;
+              overflow: hidden;
+
+              @include media-breakpoint-up(md) {
+                height: 385px;
+              }
+
+              @include media-breakpoint-up(xl) {
+                height: 534px;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                height: 782px;
+              }
+            }
+          }
+
+          &.image-1 {
+            @include media-breakpoint-up(md) {
+              flex: 1 0 50%;
+              padding-right: 8px;
+            }
+
+            @include media-breakpoint-up(lg) {
+              flex: 1 0 50%;
+              padding-right: 8px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              padding-right: 32px;
+            }
+
+            .caption-wrp {
+              margin-bottom: 50px;
+
+              @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          &.image-2 {
+            @include media-breakpoint-up(md) {
+              flex: 1 0 50%;
+              padding-left: 8px;
+            }
+
+            @include media-breakpoint-up(lg) {
+              flex: 1 0 50%;
+              padding-left: 8px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+              padding-left: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

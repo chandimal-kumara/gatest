@@ -1,0 +1,274 @@
+/* stylelint-disable */
+.footer {
+  background-color: $primary;
+  color: $white;
+  position: relative;
+  z-index: 1;
+
+  .footer-top-container {
+    padding-top: 260px;
+
+    @include media-breakpoint-up(xxl) {
+      padding-top: 350px;
+    }
+
+    .container {
+      .footer-logo {
+        padding-bottom: 50px;
+
+        @include media-breakpoint-up(lg) {
+          padding-bottom: 40px;
+          text-align: left;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          padding-bottom: 70px;
+        }
+
+        .footer-logo-wrp {
+          display: flex;
+
+          a {
+            width: 122px;
+            height: 40px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .footer-top-content {
+        .footer-content {
+          padding: 0 36px;
+          width: 100%;
+          padding-bottom: 50px;
+
+          @include media-breakpoint-up(xl) {
+            padding-bottom: 65px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            padding-bottom: 85px;
+          }
+
+          h5 {
+            margin-bottom: 15px;
+
+            @include font(16px, 27px, $fontBold, 0);
+
+            @include media-breakpoint-up(xxl) {
+              margin-bottom: 25px;
+
+              @include font(18px, 30px, $fontBold, 0);
+            }
+          }
+
+          &.footer-menu {
+            .footer-menu-wrp {
+              .nav {
+                flex-direction: column;
+
+                .menu-item {
+                  padding-bottom: 15px;
+                  list-style: none;
+                  line-height: normal;
+
+                  @include media-breakpoint-up(xxl) {
+                    padding-bottom: 25px;
+                  }
+
+                  a {
+                    color: $white;
+                    text-decoration: none;
+
+                    @include font(16px, 27px, $fontBold, 0);
+                    @include custom-transition(default, color);
+
+                    @include media-breakpoint-up(xxl) {
+                      @include font(18px, 30px, $fontBold, 0);
+                    }
+
+                    &:hover {
+                      color: $secondary;
+                    }
+                  }
+
+                  &:last-child {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+
+          &.footer-contact {
+            .contact-details {
+              .contact-detail-item {
+                line-height: normal;
+                margin-bottom: 15px;
+
+                @include media-breakpoint-up(xxl) {
+                  margin-bottom: 25px;
+                }
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                a {
+                  color: $white;
+                  word-break: break-word;
+
+                  @include font(16px, 28px, $fontSemiBold, 0);
+                  @include custom-transition(default, color);
+
+                  &:hover {
+                    color: $secondary;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+          }
+
+          &.footer-location {
+            .location-item {
+              margin-bottom: 25px;
+
+              @include media-breakpoint-up(lg) {
+                margin-bottom: 20px;
+              }
+
+              @include media-breakpoint-up(xxl) {
+                margin-bottom: 30px;
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              p {
+                word-break: break-word;
+
+                @include font(16px, 28px, $fontSemiBold, 0);
+              }
+            }
+          }
+        }
+
+        .social-media {
+          @include media-breakpoint-up(xl) {
+            text-align: right;
+          }
+
+          .social-media-wrp {
+            @include media-breakpoint-up(xl) {
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom-container {
+    padding: 40px 0;
+    border-top: 0.2px solid $gray-200;
+
+    .enterprise-logo-wrp {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 40px;
+
+      @include media-breakpoint-up(lg) {
+        max-width: 235px;
+        justify-content: space-between;
+        margin-bottom: 0;
+      }
+
+      .enterprise-logo-item {
+        flex: 0 0 auto;
+      }
+    }
+
+    .footer-copyright,
+    .footer-site-details {
+      a {
+        color: $white;
+        text-decoration: none;
+
+        @include custom-transition(default, color);
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+
+    .footer-copyright {
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(lg) {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .terms-privacy-wrp {
+        margin-top: 20px;
+
+        @include media-breakpoint-up(lg) {
+          display: inline-block;
+          margin-top: 0;
+        }
+
+        a {
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          margin-left: 10px;
+          padding-left: 10px;
+
+          &::after {
+            content: "";
+            background-color: $white;
+
+            @include absolute-item(2px, 50%, top-left, 5px, 0, 1);
+            @include custom-transition(default, color);
+
+            @include media-breakpoint-up(xxl) {
+              top: 6px;
+            }
+          }
+
+          &:first-child {
+            margin-left: 0;
+            padding-left: 0;
+
+            @include media-breakpoint-up(lg) {
+              margin-left: 10px;
+              padding-left: 10px;
+            }
+
+            &::after {
+              display: none;
+
+              @include media-breakpoint-up(lg) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-site-details {
+      @include media-breakpoint-up(lg) {
+        text-align: right;
+      }
+    }
+  }
+}

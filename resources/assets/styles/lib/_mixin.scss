@@ -1,0 +1,92 @@
+@mixin custom-transition($duration, $property...) {
+  @if $duration == "default" {
+    transition: 0.15s $property ease-in-out;
+  }
+
+  @else {
+    transition: $duration $property ease-in-out;
+  }
+}
+
+@mixin absolute-item($width: auto, $height: auto, $itempos: "center", $pos1: 50%, $pos2: 50%, $z-index: 1) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  z-index: $z-index;
+
+  @if $itempos == "top-left" {
+    top: $pos1;
+    left: $pos2;
+    bottom: auto;
+    right: auto;
+  }
+
+  @else if $itempos == "top-right" {
+    top: $pos1;
+    right: $pos2;
+    bottom: auto;
+    left: auto;
+  }
+
+  @else if $itempos == "bottom-left" {
+    bottom: $pos1;
+    left: $pos2;
+    top: auto;
+    right: auto;
+  }
+
+  @else if $itempos == "bottom-right" {
+    bottom: $pos1;
+    right: $pos2;
+    top: auto;
+    left: auto;
+  }
+
+  @else {
+    top: $pos1;
+    left: $pos2;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin font($size, $height: normal, $weight: $fontRegular, $spacing: normal) {
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+  font-weight: $weight;
+}
+
+@mixin custom-scrollbar($size: 1px, $thumb-bg, $track-bg, $border-radius: 0) {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    block-size: $size;
+    inline-size: $size;
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-bg;
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-bg;
+    border-radius: $border-radius;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-width: thin;
+    scrollbar-color: $thumb-bg $track-bg;
+  }
+}

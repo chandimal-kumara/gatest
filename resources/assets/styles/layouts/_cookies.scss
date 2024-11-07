@@ -1,0 +1,258 @@
+.cookie-click-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 5;
+  cursor: pointer;
+
+  .img-wrp {
+    background-image: url($cookie-logo);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.cookie-wrp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 5;
+
+  .section-wrp {
+    position: relative;
+    padding: 20px;
+    width: 800px;
+    height: 433px;
+    background-color: $primary;
+
+    .heading-wrp {
+      h3 {
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    .content-wrp {
+      .img-wrp {
+        background-image: url($cookie-logo);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+      }
+
+      .text-content {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        a {
+          color: $secondary;
+        }
+      }
+    }
+
+    .btn-wrp {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      bottom: 20px;
+    }
+  }
+
+  #cookiePopupModal {
+    .modal-dialog {
+      max-width: none;
+      width: 50%;
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+
+      .modal-content {
+        .modal-body {
+          .accordion-wrp {
+            .toggle-accordion-wrp {
+              display: flex;
+              align-items: baseline;
+              justify-content: space-between;
+
+              .toggle-btn {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                min-width: 60px;
+
+                .slider {
+                  position: absolute;
+                  cursor: pointer;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: $gray-500;
+                  -webkit-transition: 0.4s;
+                  transition: 0.4s;
+
+                  &.round {
+                    border-radius: 34px;
+
+                    &::before {
+                      border-radius: 50%;
+                    }
+                  }
+
+                  &::before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: $secondary;
+                    -webkit-transition: 0.4s;
+                    transition: 0.4s;
+                  }
+                }
+
+                input {
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+
+                  &:disabled + .slider {
+                    opacity: 0.7;
+                  }
+
+                  &:checked + .slider {
+                    background-color: $primary;
+                  }
+
+                  &:focus + .slider {
+                    box-shadow: 0 0 1px $primary;
+                  }
+
+                  &:checked + .slider::before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
+                  }
+                }
+              }
+
+              .accordion-item-wrp {
+                border-bottom: 1px dashed $gray-300;
+                width: 100%;
+
+                &:first-child {
+                  border-top: 1px dashed $gray-300;
+                }
+
+                .faq-title {
+                  position: relative;
+                  padding: 15px 25px 15px 0;
+                  cursor: pointer;
+
+                  @include media-breakpoint-up(md) {
+                    padding: 15px 95px 20px 15px;
+                  }
+
+                  @include media-breakpoint-up(xxl) {
+                    padding: 25px 100px 25px 25px;
+                  }
+
+                  p {
+                    margin-bottom: 0;
+                  }
+
+                  .accord-icon {
+                    position: absolute;
+                    width: 14px;
+                    height: 14px;
+                    top: 22px;
+                    right: 0;
+
+                    @include media-breakpoint-up(md) {
+                      right: 20px;
+                    }
+
+                    @include media-breakpoint-up(xxl) {
+                      right: 25px;
+                      top: 30px;
+                      width: 18px;
+                      height: 18px;
+                    }
+
+                    &::after {
+                      content: "";
+                      display: block;
+                      background-color: $primary;
+                      position: absolute;
+                      top: 50%;
+                      left: 0;
+                      transition: 0.35s;
+                      width: 100%;
+                      height: 2px;
+                      transform: translateY(-50%) rotate(0);
+                    }
+
+                    &::before {
+                      content: "";
+                      display: block;
+                      background-color: $primary;
+                      position: absolute;
+                      top: 50%;
+                      left: 0;
+                      transition: 0.35s;
+                      width: 100%;
+                      height: 2px;
+                      transform: translateY(-50%) rotate(-90deg);
+                      opacity: 0;
+                    }
+                  }
+
+                  &.collapsed {
+                    .accord-icon {
+                      &::after {
+                        transform: translateY(-50%) rotate(90deg);
+                      }
+
+                      &::before {
+                        transform: translateY(-50%);
+                        opacity: 1;
+                      }
+                    }
+                  }
+                }
+
+                .faq-content {
+                  .faq-content-inner-wrp {
+                    padding: 0 25px 15px 0;
+
+                    @include media-breakpoint-up(md) {
+                      padding: 0 95px 20px 15px;
+                    }
+
+                    @include media-breakpoint-up(xxl) {
+                      padding: 0 100px 25px 25px;
+                    }
+
+                    > * {
+                      color: $gray-500;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

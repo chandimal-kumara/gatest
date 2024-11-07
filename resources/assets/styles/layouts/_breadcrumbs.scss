@@ -1,0 +1,49 @@
+.breadcrumb-wrp {
+  background-color: $gray-100;
+  padding: 20px 0;
+
+  @include media-breakpoint-up(xxl) {
+    padding: 28px 0;
+  }
+
+  a,
+  .current-page {
+    text-decoration: none;
+
+    @include font(16px, 28px, $fontSemiBold);
+
+    @include media-breakpoint-up(xxl) {
+      @include font(18px, 30px, $fontSemiBold);
+    }
+  }
+
+  .text-wrp {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0 !important;
+    }
+
+    .link-wrp {
+      & > * {
+        padding-right: 10px;
+        color: $gray-500;
+      }
+
+      a {
+        &::after {
+          content: ">";
+          margin-left: 12px;
+        }
+      }
+
+      .current-page {
+        color: $black;
+      }
+    }
+  }
+}

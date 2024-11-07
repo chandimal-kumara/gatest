@@ -1,0 +1,18 @@
+form {
+  .form-item {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      height: $input-height-xl;
+      border: $input-border-width $input-border-style $input-border-color;
+      color: $input-color;
+      background-color: $input-bg-color;
+      padding: $field-padding-xl;
+
+      @include media-breakpoint-up(xxl) {
+        height: $input-height-xxl;
+        padding: $field-padding-xxl;
+      }
+    }
+  }
+}

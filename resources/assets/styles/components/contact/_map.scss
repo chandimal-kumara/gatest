@@ -1,0 +1,128 @@
+.contact-map-section {
+  .content-map-wrp {
+    .map-wrp {
+      .google-map {
+        margin-bottom: 50px;
+
+        @include media-breakpoint-up(xxl) {
+          margin-bottom: 125px;
+        }
+
+        .map-content {
+          margin: 0 -36px;
+
+          @include media-breakpoint-up(sm) {
+            margin: 0;
+          }
+
+          .acf-map {
+            height: 300px;
+
+            @include media-breakpoint-up(lg) {
+              height: 375px;
+            }
+
+            @include media-breakpoint-up(xl) {
+              height: 475px;
+            }
+
+            .label-position {
+              margin-top: 50px;
+            }
+          }
+        }
+      }
+
+      .address-wrp,
+      .contacts-wrp {
+        h4 {
+          margin-bottom: 15px;
+
+          @include media-breakpoint-up(md) {
+            margin-bottom: 20px;
+          }
+        }
+
+        .address-content {
+          margin-bottom: 40px;
+
+          @include media-breakpoint-up(xxl) {
+            margin-bottom: 55px;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .social-wrp {
+        h4 {
+          margin-bottom: 15px;
+
+          @include media-breakpoint-up(md) {
+            margin-bottom: 20px;
+          }
+        }
+
+        .social-items-wrp {
+          display: flex;
+
+          .footer-social-media-item {
+            width: 36px;
+            height: 36px;
+            margin-right: 15px;
+            background-color: $gray-400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-form-wrp {
+    margin-top: 100px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
+
+    .contact-form-wrp {
+      .eyebrow-heading {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 0;
+        }
+      }
+
+      h2 {
+        margin-bottom: 12px;
+
+        @include media-breakpoint-up(xl) {
+          margin-bottom: 20px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin-bottom: 25px;
+        }
+      }
+
+      .form-section {
+        margin-top: 12px;
+
+        @include media-breakpoint-up(xl) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

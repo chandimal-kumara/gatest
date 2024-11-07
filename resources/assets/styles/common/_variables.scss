@@ -1,0 +1,125 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+// theme color pallete
+$white: #fff !default;
+$gray-100: #f3f3f3 !default;
+$gray-200: #e8e8e8 !default;
+$gray-300: #e1e1e1 !default;
+$gray-400: #bfbfbf !default;
+$gray-500: #959595 !default;
+$black: #000 !default;
+
+$primary: #05253c !default;
+$primary-light: #002f51 !default;
+$secondary: #ffdc47 !default;
+$secondary-dark: #ffce00 !default;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+);
+
+// section background colors
+$bg-option-1: $gray-100;
+$bg-option-2: $gray-300;
+
+// form colors
+$success-msg-color: $white !default;
+$success-msg-bg: #009247 !default;
+$error-msg-color: $white !default;
+$error-msg-bg: #b8252b !default;
+$input-height-xl: 50px !default;
+$input-height-xxl: 60px !default;
+$textarea-height-xl: 150px !default;
+$textarea-height-xxl: 180px !default;
+$label-color: $black !default;
+$placeholder-color: $gray-400 !default;
+$input-color: $black !default;
+$input-border-color: $gray-400 !default;
+$input-border-width: 1px !default;
+$input-border-style: solid !default;
+$input-bg-color: $white !default;
+$field-padding-xxl: 19px 25px !default;
+$field-padding-xl: 14px 20px !default;
+
+// theme font families
+$font-family-navigo: "navigo", sans-serif !default;
+$font-family-manrope: "Manrope", sans-serif !default;
+
+// font weights
+$fontExtraLight: 200;
+$fontLight: 300;
+$fontRegular: 400;
+$fontMedium: 500;
+$fontSemiBold: 600;
+$fontBold: 700;
+$fontExtraBold: 800;
+$fontBlack: 900;
+
+// section gaps
+$section-gap-per-side: 50px;
+$section-gap-per-side-xl: 70px;
+$section-gap-per-side-xxl: 90px;
+
+$section-gap: $section-gap-per-side 0;
+$section-gap-xl: $section-gap-per-side-xl 0;
+$section-gap-xxl: $section-gap-per-side-xxl 0;
+
+$bg-section-gap-per-side: $section-gap-per-side * 2;
+$bg-section-gap-per-side-xl: $section-gap-per-side-xl * 2;
+$bg-section-gap-per-side-xxl: $section-gap-per-side-xxl * 2;
+
+$bg-section-gap: $bg-section-gap-per-side 0;
+$bg-section-gap-xl: $bg-section-gap-per-side-xl 0;
+$bg-section-gap-xxl: $bg-section-gap-per-side-xxl 0;
+
+$multi-bg-section-gap: 0 - $section-gap-per-side;
+$multi-bg-section-gap-xl: 0 - $section-gap-per-side-xl;
+$multi-bg-section-gap-xxl: 0 - $section-gap-per-side-xxl;
+
+// mobile menu activates after this breakpoint
+$menu-breakpoint: xl;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width: 72px !default;
+
+$container-max-widths: (
+  sm: calc(468px + $grid-gutter-width),
+  md: calc(648px + $grid-gutter-width),
+  lg: calc(888px + $grid-gutter-width),
+  xl: calc(1088px + $grid-gutter-width),
+  xxl: calc(1640px + $grid-gutter-width),
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+//image paths
+$image-base-path: "/images/";
+
+$readmore-arrow: "#{$image-base-path}read-more-btn-arrow.svg";
+$readmore-arrow-white: "#{$image-base-path}read-more-btn-arrow-white.svg";
+$mobile-sub-arrow: "#{$image-base-path}mobile-sub-menu-arrow.svg";
+$desktop-sub-arrow: "#{$image-base-path}desktop-dropdown.svg";
+$eyebrow-icon: "#{$image-base-path}eyebrow-heading-icon.svg";
+$slider-arrow-left: "#{$image-base-path}slider-arrow-left.svg";
+$slider-arrow-left-hover: "#{$image-base-path}slider-arrow-left-hover.svg";
+$slider-arrow-right: "#{$image-base-path}slider-arrow-right.svg";
+$slider-arrow-right-hover: "#{$image-base-path}slider-arrow-right-hover.svg";
+$form-select-arrow: "#{$image-base-path}form-select-arrow.svg";
+$video-play-icon: "#{$image-base-path}video-play-icon.svg";
+$cookie-logo: "#{$image-base-path}cookie-logo.svg";
+$rating-star: "#{$image-base-path}rating-star.svg";
+$rating-star-inactive: "#{$image-base-path}rating-star-inactive.svg";

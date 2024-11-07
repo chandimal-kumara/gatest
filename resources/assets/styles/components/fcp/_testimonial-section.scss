@@ -1,0 +1,119 @@
+.testimonials-section {
+  .section-inner-wrp {
+    .intro-content {
+      max-width: 721px;
+      margin: 0 auto 50px auto;
+
+      h2 {
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .testimonials-wrp {
+      position: relative;
+
+      .testimonials-row {
+        margin: 0 -27px;
+        overflow: hidden;
+        outline: 0;
+
+        @include media-breakpoint-up(xxl) {
+          margin: 0 -10px;
+        }
+
+        .flickity-viewport {
+          position: relative;
+          height: 100%;
+
+          .flickity-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .testimonials-item-wrp {
+          padding: 0 27px;
+          display: flex;
+
+          @include media-breakpoint-up(xxl) {
+            padding: 0 10px;
+          }
+
+          .testimonial-item {
+            background-color: $gray-200;
+            padding: 48px 39px;
+
+            @include media-breakpoint-up(xl) {
+              padding: 50px 46px;
+            }
+
+            .image-wrp {
+              margin-bottom: 15px;
+
+              img {
+                width: 90px;
+                height: 90px;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+            }
+
+            h4 {
+              margin-bottom: 0;
+            }
+
+            .title-wrp {
+              margin-bottom: 20px;
+            }
+
+            .stars-wrp {
+              margin-top: 30px;
+              display: flex;
+              gap: 10px;
+
+              .single-star {
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-image: url($rating-star-inactive);
+                background-size: cover;
+
+                &.active {
+                  background-image: url($rating-star);
+                }
+              }
+            }
+          }
+        }
+
+        &.flickity-resize {
+          .testimonials-item-wrp {
+            min-height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &.grid {
+    .section-inner-wrp {
+      .testimonials-wrp {
+        .testimonials-row {
+          &::after {
+            content: "flickity";
+            display: none;
+
+            @include media-breakpoint-up(xxl) {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+  }
+}
