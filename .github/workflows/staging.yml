@@ -18,8 +18,6 @@ jobs:
         port: ${{ secrets.DEPLOY_PORT }}
         script: |
           cd /www/wwwroot/gatest.chandimal.space/public_html/wp-content/themes/gatest
-          export NVM_DIR=~/.nvm
-          source ~/.nvm/nvm.sh
           nvm use 14
           node -v
           git checkout staging
