@@ -17,7 +17,7 @@ jobs:
         key: ${{ secrets.DEPLOY_KEY }}
         port: ${{ secrets.DEPLOY_PORT }}
         script: |
-          cd /www/wwwroot/gatest.chandimal.site/public_html/wp-content/themes/gatest
+          cd /www/wwwroot/gatest.chandimal.space/public_html/wp-content/themes/gatest
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           nvm use 14
@@ -30,5 +30,5 @@ jobs:
           npx browserslist@latest --update-db
           yarn build
           rm -r node_modules
-          rm -rf /www/wwwroot/gatest.chandimal.site/public_html/wp-content/uploads/cache
+          rm -rf /www/wwwroot/gatest.chandimal.space/public_html/wp-content/uploads/cache
           echo "GA Test 2.0 Staging deployment completed"
